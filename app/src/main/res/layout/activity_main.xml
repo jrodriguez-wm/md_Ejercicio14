@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mx.com.webmaps.md_ejercicio14.MainActivity">
+
+    <android.support.v7.widget.AppCompatSeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appCompatSeekBar_id"
+        android:layout_margin="30dp"
+        android:isScrollContainer="true"
+        android:max="100"
+        android:theme="@style/SeekBarTheme"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/appCompatSeekBar_txt"
+        android:text="@string/appcompatseekbar"
+        android:textStyle="bold"
+        android:layout_below="@id/appCompatSeekBar_id"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/appCompatSeekBar_value"
+        android:text="@string/_0"
+        android:layout_below="@id/appCompatSeekBar_id"
+        android:layout_marginLeft="170dp"
+        android:layout_marginStart="170dp"/>
+
+</RelativeLayout>
