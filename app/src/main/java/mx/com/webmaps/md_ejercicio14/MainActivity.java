@@ -6,10 +6,15 @@ import android.support.v7.widget.AppCompatSeekBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.appyvet.materialrangebar.RangeBar;
+
 public class MainActivity extends AppCompatActivity {
 
     AppCompatSeekBar seekBar;
     TextView seekBarValue;
+
+    RangeBar rangeBar1;
+    TextView rangeBarVal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
         seekBar = (AppCompatSeekBar) findViewById(R.id.appCompatSeekBar_id);
         seekBarValue = (TextView) findViewById(R.id.appCompatSeekBar_value);
+
+        rangeBar1 = (RangeBar) findViewById(R.id.rangeBar1_id);
+        rangeBarVal = (TextView) findViewById(R.id.rangeBar1_value);
 
         //AppvompatSeekBar Default Value
         seekBar.setProgress(0);
@@ -40,6 +48,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
+            }
+        });
+
+
+        rangeBar1.setSeekPinByIndex(0);
+        rangeBar1.setPinTextColor(getResources().getColor(R.color.colorRangeBarText));
+        rangeBar1.setSelectorColor(getResources().getColor(R.color.colorAccent));
+        rangeBar1.setTickColor(getResources().getColor(R.color.colorAccent));
+        rangeBar1.setConnectingLineColor(getResources().getColor(R.color.colorAccent));
+        //rangeBar1.setBarColor(getResources().getColor(R.color.colorAccent));
+        rangeBar1.setPinColor(getResources().getColor(R.color.colorAccent));
+
+        rangeBar1.setOnRangeBarChangeListener(new RangeBar.OnRangeBarChangeListener() {
+            @Override
+            public void onRangeChangeListener(RangeBar rangeBar, int leftPinIndex, int rightPinIndex, String leftPinValue, String rightPinValue) {
+                //System.out.println(rightPinValue);
+                rangeBarVal.setText(rightPinValue);
             }
         });
     }
