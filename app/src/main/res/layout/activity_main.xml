@@ -65,4 +65,43 @@
         android:layout_marginLeft="110dp"
         android:layout_marginStart="110dp"/>
 
+    <com.appyvet.materialrangebar.RangeBar
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:id="@+id/rangeBar2_id"
+        android:layout_below="@id/rangeBar1_id"
+        android:layout_margin="30dp"
+        app:mrb_rangeBar="true"
+        app:mrb_tickStart="10"
+        app:mrb_tickEnd="20"
+        app:mrb_tickInterval="2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rangeBar2_txt"
+        android:text="@string/rangebar"
+        android:textStyle="bold"
+        android:layout_below="@id/rangeBar2_id"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rangeBar2_leftvalue"
+        android:text="@string/_0"
+        android:layout_below="@id/rangeBar2_id"
+        android:layout_marginLeft="110dp"
+        android:layout_marginStart="110dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rangeBar2_rightvalue"
+        android:text="@string/_0"
+        android:layout_below="@id/rangeBar2_id"
+        android:layout_marginLeft="160dp"
+        android:layout_marginStart="160dp"/>
+
 </RelativeLayout>

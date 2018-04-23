@@ -16,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
     RangeBar rangeBar1;
     TextView rangeBarVal;
 
+    RangeBar rangeBar2;
+    TextView rangeBarLeftVal;
+    TextView rangeBarRigthVal;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
         rangeBar1 = (RangeBar) findViewById(R.id.rangeBar1_id);
         rangeBarVal = (TextView) findViewById(R.id.rangeBar1_value);
+
+        rangeBar2 = (RangeBar) findViewById(R.id.rangeBar2_id);
+        rangeBarLeftVal = (TextView) findViewById(R.id.rangeBar2_leftvalue);
+        rangeBarRigthVal = (TextView) findViewById(R.id.rangeBar2_rightvalue);
 
         //AppvompatSeekBar Default Value
         seekBar.setProgress(0);
@@ -67,5 +75,26 @@ public class MainActivity extends AppCompatActivity {
                 rangeBarVal.setText(rightPinValue);
             }
         });
+
+
+        rangeBar2.setSeekPinByIndex(0);
+        rangeBar2.setPinTextColor(getResources().getColor(R.color.colorRangeBarText));
+        rangeBar2.setSelectorColor(getResources().getColor(R.color.colorAccent));
+        rangeBar2.setTickColor(getResources().getColor(R.color.colorAccent));
+        rangeBar2.setConnectingLineColor(getResources().getColor(R.color.colorAccent));
+        //rangeBar2.setBarColor(getResources().getColor(R.color.colorAccent));
+        rangeBar2.setPinColor(getResources().getColor(R.color.colorAccent));
+
+
+        rangeBar2.setOnRangeBarChangeListener(new RangeBar.OnRangeBarChangeListener() {
+            @Override
+            public void onRangeChangeListener(RangeBar rangeBar, int leftPinIndex, int rightPinIndex, String leftPinValue, String rightPinValue) {
+                //System.out.println(rightPinValue);
+                rangeBarLeftVal.setText(leftPinValue);
+                rangeBarRigthVal.setText(rightPinValue);
+            }
+        });
+
+
     }
 }
